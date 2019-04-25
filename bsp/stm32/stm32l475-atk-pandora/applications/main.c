@@ -12,11 +12,15 @@
 #include <rtdevice.h>
 #include <board.h>
 
+#include "task_button.h"
+
 /* defined the LED0 pin: PE7 */
 #define LED0_PIN    GET_PIN(E, 7)
 
 int main(void)
 {
+    task_button_init();
+    
     int count = 1;
     /* set LED0 pin mode to output */
     rt_pin_mode(LED0_PIN, PIN_MODE_OUTPUT);
